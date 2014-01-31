@@ -1,9 +1,9 @@
 {
-  "name": "ng-boilerplate",
+  "name": "ab-angular-boilerplate",
   "version": "0.3.1",
   "devDependencies": {
-    "angular": "~1.2.10",
-    "angular-mocks": "~1.2.10",
+    "angular": ">= 1.2.10",
+    "angular-mocks": ">= 1.2.10",
     "bootstrap": "~3.1.0",
     "angular-bootstrap": "~0.10.0",
     "angular-ui-router": "~0.2.8",
