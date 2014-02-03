@@ -163,9 +163,9 @@ module.exports = function ( grunt ) {
       build_css: {
         src: [
           '<%= vendor_files.css %>',
-          '<%= recess.build.dest %>'
+          '<%= less.build.dest %>'
         ],
-        dest: '<%= recess.build.dest %>'
+        dest: '<%= less.build.dest %>'
       },
       /**
        * The `compile_js` target is the concatenation of our application source
@@ -382,7 +382,7 @@ module.exports = function ( grunt ) {
           '<%= html2js.common.dest %>',
           '<%= html2js.app.dest %>',
           '<%= vendor_files.css %>',
-          '<%= recess.build.dest %>'
+          '<%= less.build.dest %>'
         ]
       },
 
