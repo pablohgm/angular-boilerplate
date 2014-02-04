@@ -13,6 +13,8 @@ module.exports = function ( karma ) {
       <% }); %>
       'src/**/*.js',
       'src/**/*.coffee',
+      'test/**/*.js',
+      'test/**/*.coffee',
     ],
     exclude: [
       'src/assets/**/*.js'
