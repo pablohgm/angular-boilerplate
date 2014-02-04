@@ -11,13 +11,14 @@
     "restangular": "~1.3.1",
     "lodash": "~2.4.1",
     "ng-table": "~0.3.1",
-    "angular-mocks": ">= 1.2.10",
-    "jasmine": "~2.0.0"
+    "angular-mocks": ">= 1.2.11",
+    "jasmine": "~2.0.0",
+    "angular-scenario": ">= 1.2.11"
   },
   "dependencies": {
     "angular-ui-router": "0.2.8-bowratic-tedium"
   },
   "resolutions": {
-    "angular": "1.2.11-build.2196+sha.339a165"
+    "angular": "1.2.12-build.2216+sha.5850e61"
   }
 }
