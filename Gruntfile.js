@@ -255,8 +255,8 @@ module.exports = function ( grunt ) {
         }
       },
       compile: {
-        src: [ '<%= recess.build.dest %>' ],
-        dest: '<%= recess.build.dest %>',
+        src: [ '<%= less.build.dest %>' ],
+        dest: '<%= less.build.dest %>',
         options: {
           compile: true,
           compress: true,
@@ -357,7 +357,7 @@ module.exports = function ( grunt ) {
         background: true
       },
       continuous: {
-        singleRun: false
+        singleRun: true
       }
     },
 
@@ -395,7 +395,7 @@ module.exports = function ( grunt ) {
         src: [
           '<%= concat.compile_js.dest %>',
           '<%= vendor_files.css %>',
-          '<%= recess.compile.dest %>'
+          '<%= less.compile.dest %>'
         ]
       }
     },
