@@ -14,7 +14,6 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-conventional-changelog');
   grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks('grunt-coffeelint');
-  /*grunt.loadNpmTasks('grunt-recess');*/
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-ngmin');
@@ -358,7 +357,7 @@ module.exports = function ( grunt ) {
         background: true
       },
       continuous: {
-        singleRun: true
+        singleRun: false
       }
     },
 
