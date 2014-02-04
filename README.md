@@ -1,6 +1,7 @@
-# [ngBoilerplate](http://joshdmiller.github.com/ng-boilerplate) [![Build Status](https://travis-ci.org/joshdmiller/ng-boilerplate.png?branch=master)](https://travis-ci.org/joshdmiller/ng-boilerplate)
+# [ab-angular-boilerplate](https://github.com/kvindasAB/ab-angular-boilerplate) [![Build Status](https://travis-ci.org/joshdmiller/ng-boilerplate.png?branch=master)](https://travis-ci.org/joshdmiller/ng-boilerplate)
 
 An enterprise kickstarter for [AngularJS](http://angularjs.org) projects.
+
 Based on [ngBoilerplate](http://joshdmiller.github.com/ng-boilerplate).
 
 ***
@@ -23,6 +24,14 @@ Finally, open `file:///path/to/ng-boilerplate/build/index.html` in your browser.
 Happy hacking!
 
 ## Purpose
+
+`ab-angular-boilerplate` main differences with ng-boilerplate.
+
+- Updated to use the latest versions of both grunt plugins and bower libs.
+- Added some core libs regularly used on enterprise development. Example: restangular, ng-table, etc.
+- Separation of tests from application sources.
+- Separation of styles from application sources.
+
 
 `ngBoilerplate` is designed to make life easy by providing a basic framework
 with which to kickstart AngularJS projects. It contains a best-practice
