@@ -31,6 +31,7 @@ Happy hacking!
 - Added some core libs regularly used on enterprise development. Example: restangular, ng-table, etc.
 - Separation of tests from application sources.
 - Separation of styles from application sources.
+- Require JS integration (pending)
 
 
 `ngBoilerplate` is designed to make life easy by providing a basic framework
