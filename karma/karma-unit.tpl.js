@@ -1,5 +1,5 @@
-module.exports = function ( karma ) {
-  karma.configure({
+module.exports = function(config) {
+  config.set({
     /** 
      * From where to look for files, starting with the location of this file.
      */
@@ -13,8 +13,8 @@ module.exports = function ( karma ) {
       <% }); %>
       'src/**/*.js',
       'src/**/*.coffee',
-      'test/**/*.js',
-      'test/**/*.coffee',
+      'test/unit/**/*.js',
+      'test/unit/**/*.coffee',
     ],
     exclude: [
       'src/assets/**/*.js'
@@ -35,8 +35,10 @@ module.exports = function ( karma ) {
      * operating, and what is the URL path for the browser to use.
      */
     port: 9018,
-    runnerPort: 9100,
     urlRoot: '/',
+
+    // enable / disable colors in the output (reporters and logs)
+    colors: true,
 
     /** 
      * Disable file watching by default.
@@ -58,7 +60,15 @@ module.exports = function ( karma ) {
      */
     browsers: [
       'Firefox'
-    ]
+    ],
+
+    // If browser does not capture in given timeout [ms], kill it
+    captureTimeout: 60000,
+
+    // Continuous Integration mode
+    // if true, it capture browsers, run tests and exit
+    singleRun: false
+
   });
 };
 

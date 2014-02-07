@@ -349,14 +349,13 @@ module.exports = function ( grunt ) {
      * The Karma configurations.
      */
     karma: {
-      options: {
-        configFile: '<%= build_dir %>/karma-unit.js'
-      },
       unit: {
-        runnerPort: 9101,
+        configFile: '<%= build_dir %>/karma-unit.conf.js',
+        port: 9101,
         background: true
       },
       continuous: {
+        configFile: '<%= build_dir %>/karma-unit.conf.js',
         singleRun: true
       }
     },
@@ -549,7 +548,7 @@ module.exports = function ( grunt ) {
    * before watching for changes.
    */
   grunt.renameTask( 'watch', 'delta' );
-  grunt.registerTask( 'watch', [ 'build', 'karma:unit', 'delta' ] );
+  grunt.registerTask( 'watch', [ 'build', 'karma:unit:start', 'delta' ] );
 
   /**
    * The default task is to build and compile.
@@ -628,7 +627,7 @@ module.exports = function ( grunt ) {
   grunt.registerMultiTask( 'karmaconfig', 'Process karma config templates', function () {
     var jsFiles = filterForJS( this.filesSrc );
     
-    grunt.file.copy( 'karma/karma-unit.tpl.js', grunt.config( 'build_dir' ) + '/karma-unit.js', { 
+    grunt.file.copy( 'karma/karma-unit.tpl.js', grunt.config( 'build_dir' ) + '/karma-unit.conf.js', {
       process: function ( contents, path ) {
         return grunt.template.process( contents, {
           data: {
