@@ -405,14 +405,22 @@ module.exports = function ( grunt ) {
      */
     karmaconfig: {
       unit: {
-        dir: '<%= build_dir %>',
+        tpl: 'karma/karma-unit.tpl.js',
+        dest: 'karma-unit.conf.js',
         src: [ 
           '<%= vendor_files.js %>',
           '<%= html2js.app.dest %>',
           '<%= html2js.common.dest %>',
           '<%= test_files.js %>'
         ]
+      },
+      e2e: {
+        tpl: 'karma/karma-e2e.tpl.js',
+        dest: 'karma-e2e.conf.js',
+        src: [
+        ]
       }
+
     },
 
     /**
@@ -561,7 +569,7 @@ module.exports = function ( grunt ) {
   grunt.registerTask( 'build', [
     'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
-    'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'karmaconfig',
+    'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'karmaconfig:unit',
     'karma:continuous' 
   ]);
 
@@ -626,8 +634,10 @@ module.exports = function ( grunt ) {
    */
   grunt.registerMultiTask( 'karmaconfig', 'Process karma config templates', function () {
     var jsFiles = filterForJS( this.filesSrc );
-    
-    grunt.file.copy( 'karma/karma-unit.tpl.js', grunt.config( 'build_dir' ) + '/karma-unit.conf.js', {
+    var tplFile = this.files[0].tpl;
+    var destFile = this.files[0].dest;
+
+    grunt.file.copy( tplFile, grunt.config( 'build_dir' ) + '/' + destFile, {
       process: function ( contents, path ) {
         return grunt.template.process( contents, {
           data: {
