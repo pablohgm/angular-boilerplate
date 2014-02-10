@@ -606,7 +606,7 @@ module.exports = function ( grunt ) {
   ]);
 
   grunt.registerTask( 'test:unit', [
-    'build', 'karmaconfig:unit', 'karma:unit'
+    'build'
   ]);
 
   grunt.registerTask( 'test:e2e', [
