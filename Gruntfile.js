@@ -11,6 +11,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-conventional-changelog');
   grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks('grunt-coffeelint');
@@ -345,10 +346,30 @@ module.exports = function ( grunt ) {
       }
     },
 
+    connect: {
+      options: {
+        port: 8000,
+        base: 'build/'
+      },
+      server: {
+        options: {
+          keepalive: true
+        }
+      },
+      testserver: {
+
+      }
+    },
+
     /**
      * The Karma configurations.
      */
     karma: {
+      e2e: {
+        configFile: '<%= build_dir %>/karma-e2e.conf.js',
+        port: 9101,
+        singleRun: true
+      },
       unit: {
         configFile: '<%= build_dir %>/karma-unit.conf.js',
         port: 9101,
@@ -418,6 +439,9 @@ module.exports = function ( grunt ) {
         tpl: 'karma/karma-e2e.tpl.js',
         dest: 'karma-e2e.conf.js',
         src: [
+          '<%= vendor_files.js %>',
+          '<%= html2js.app.dest %>',
+          '<%= html2js.common.dest %>'
         ]
       }
 
@@ -579,6 +603,14 @@ module.exports = function ( grunt ) {
    */
   grunt.registerTask( 'compile', [
     'less:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
+  ]);
+
+  grunt.registerTask( 'test:unit', [
+    'build', 'karmaconfig:unit', 'karma:unit'
+  ]);
+
+  grunt.registerTask( 'test:e2e', [
+    'build', 'karmaconfig:e2e', 'connect:testserver', 'karma:e2e'
   ]);
 
   /**
