@@ -5,15 +5,15 @@ define(['angular', './module', './controllers', './partials'], function (ng, mod
      * And of course we define a controller for our route.
      */
     module.config(function config( $stateProvider ) {
-        $stateProvider.state( 'home', {
-            url: '/home',
+        $stateProvider.state( 'about', {
+            url: '/about',
             views: {
                 "main": {
-                    controller: 'HomeCtrl',
-                    templateUrl: 'src/app/home/home.tpl.html'
+                    controller: 'AboutCtrl',
+                    templateUrl: 'src/app/about/about.tpl.html'
                 }
             },
-            data:{ pageTitle: 'Home' }
+            data:{ pageTitle: 'What is It?' }
         });
     });
 
