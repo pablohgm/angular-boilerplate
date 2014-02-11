@@ -1,0 +1,4 @@
+define([
+    './controllers',
+    './routes'
+], function () {});

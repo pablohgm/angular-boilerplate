@@ -14,13 +14,13 @@ require.config({
         angular: '../../vendor/angular/angular',
 
         angularResource: '../../vendor/angular-resource/angular-resource',
-        angularBootstrap: '../../vendor/angular-bootstrap/ui-bootstrap-tpls',
+        angularBootstrap: '../../vendor/angular-bootstrap/ui-bootstrap-tpls.min',
         angularUIRouter:  '../../vendor/angular-ui-router/release/angular-ui-router.min',
         angularUIUtils:  '../../vendor/angular-ui-utils/ui-utils.min',
         angularMoment:  '../../vendor/angular-moment/angular-moment.min',
         restangular: '../../vendor/restangular/dist/restangular',
 
-        require_domReady: '../../vendor/requirejs-domready/domReady',
+        domReady: '../../vendor/requirejs-domready/domReady',
         require_text: '../../vendor/requirejs-text/text',
 
         lodash: '../../vendor/lodash/dist/lodash.min',
