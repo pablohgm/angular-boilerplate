@@ -21,11 +21,12 @@ require.config({
         restangular: '../../vendor/restangular/dist/restangular',
 
         domReady: '../../vendor/requirejs-domready/domReady',
-        require_text: '../../vendor/requirejs-text/text',
+        text: '../../vendor/requirejs-text/text',
 
         lodash: '../../vendor/lodash/dist/lodash.min',
         moment: '../../vendor/moment/min/moment.min',
         placeholders: '../../vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min',
+        plusOne: '../common/plusOne/plusOne'
 
     },
     shim: {

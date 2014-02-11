@@ -8,7 +8,22 @@ define([
 ], function (ng) {
     'use strict';
 
-    return ng.module('app', [
+    var module = ng.module('app', [
         'app.home'
     ]);
+
+    module.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
+        $urlRouterProvider.otherwise( '/home' );
+    });
+
+    module.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
+        $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+            console.log("state changed....");
+            if ( angular.isDefined( toState.data.pageTitle ) ) {
+                $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
+            }
+        });
+    });
+
+    return module;
 });

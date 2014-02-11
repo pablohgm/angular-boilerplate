@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ngBoilerplate" ng-controller="AppCtrl">
+<html ng-controller="AppCtrl" >
   <head>
     <title ng-bind="pageTitle"></title>
 
@@ -22,13 +22,11 @@
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
 
-    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
-    <script type="text/javascript" src="<%= file %>"></script><% }); %>
-
     <!-- it's stupid to have to load it here, but this is for the +1 button -->
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
       { "parsetags": "explicit" }
     </script>
+7
   </head>
   <body>
     <div class="container">
@@ -104,5 +102,8 @@
         </div>
       </div>
     </footer>
+
+    <script src="vendor/requirejs/require.js" data-main="src/app/requirejs_config.js"></script>
+
   </body>
 </html>

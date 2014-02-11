@@ -10,7 +10,7 @@ define(['angular', './module', './controllers'], function (ng, module, controlle
             views: {
                 "main": {
                     controller: 'HomeCtrl',
-                    templateUrl: 'home/home.tpl.html'
+                    templateUrl: 'src/app/home/home.tpl.html'
                 }
             },
             data:{ pageTitle: 'Home' }
