@@ -140,6 +140,16 @@ module.exports = function ( grunt ) {
           }
         ]
       },
+      build_apptpl: {
+        files: [
+          {
+            src: [ '<%= app_files.atpl %>', '<%= app_files.ctpl %>' ],
+            dest: '<%= build_dir %>/',
+            cwd: '.',
+            expand: true
+          }
+        ]
+      },
       compile_assets: {
         files: [
           {
@@ -593,7 +603,7 @@ module.exports = function ( grunt ) {
   grunt.registerTask( 'build', [
     'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
-    'copy:build_appjs', 'copy:build_vendorjs', 'index:build',
+    'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_apptpl' , 'index:build',
   ]);
   // Temporarely disable unit testing
   //'karmaconfig:unit', 'karma:continuous'
