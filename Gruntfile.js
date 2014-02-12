@@ -12,13 +12,13 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-conventional-changelog');
   grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks('grunt-coffeelint');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-ngmin');
-  grunt.loadNpmTasks('grunt-html2js');
 
   /**
    * Load in our build configuration file.
@@ -189,9 +189,7 @@ module.exports = function ( grunt ) {
           '<%= vendor_files.js %>', 
           'module.prefix', 
           '<%= build_dir %>/src/**/*.js', 
-          '<%= html2js.app.dest %>', 
-          '<%= html2js.common.dest %>', 
-          'module.suffix' 
+          'module.suffix'
         ],
         dest: '<%= compile_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.js'
       }
@@ -327,39 +325,29 @@ module.exports = function ( grunt ) {
     },
 
     /**
-     * HTML2JS is a Grunt plugin that takes all of your template files and
-     * places them into JavaScript files as strings that are added to
-     * AngularJS's template cache. This means that the templates too become
-     * part of the initial payload as one JavaScript file. Neat!
+     * Requirejs optimization plugin
      */
-    html2js: {
-      /**
-       * These are the templates from `src/app`.
-       */
-      app: {
+    requirejs: {
+      compile: {
         options: {
-          base: 'src/app'
-        },
-        src: [ '<%= app_files.atpl %>' ],
-        dest: '<%= build_dir %>/templates-app.js'
-      },
-
-      /**
-       * These are the templates from `src/common`.
-       */
-      common: {
-        options: {
-          base: 'src/common'
-        },
-        src: [ '<%= app_files.ctpl %>' ],
-        dest: '<%= build_dir %>/templates-common.js'
+          optimize: "none",
+          baseUrl: '<%= build_dir %>/src/app',
+          mainConfigFile: '<%= build_dir %>/src/app/requirejs_config.js',
+          name: 'requirejs_config',
+          out: '<%= compile_dir %>/assets/rjs-<%= pkg.name %>-<%= pkg.version %>.js'
+        }
       }
     },
 
+
+    /**
+     * Connect is a http server provided by grunt.
+     *
+     */
     connect: {
       options: {
         port: 8000,
-        base: 'build/'
+        base: '<%= build_dir %>/'
       },
       server: {
         options: {
@@ -408,8 +396,6 @@ module.exports = function ( grunt ) {
         src: [
           '<%= vendor_files.js %>',
           '<%= build_dir %>/src/**/*.js',
-          '<%= html2js.common.dest %>',
-          '<%= html2js.app.dest %>',
           '<%= vendor_files.css %>',
           '<%= less.build.dest %>'
         ]
@@ -440,8 +426,6 @@ module.exports = function ( grunt ) {
         dest: 'karma-unit.conf.js',
         src: [ 
           '<%= vendor_files.js %>',
-          '<%= html2js.app.dest %>',
-          '<%= html2js.common.dest %>',
           '<%= test_files.js %>'
         ]
       },
@@ -449,9 +433,7 @@ module.exports = function ( grunt ) {
         tpl: 'karma/karma-e2e.tpl.js',
         dest: 'karma-e2e.conf.js',
         src: [
-          '<%= vendor_files.js %>',
-          '<%= html2js.app.dest %>',
-          '<%= html2js.common.dest %>'
+          '<%= vendor_files.js %>'
         ]
       }
 
@@ -539,7 +521,7 @@ module.exports = function ( grunt ) {
           '<%= app_files.atpl %>', 
           '<%= app_files.ctpl %>'
         ],
-        tasks: [ 'html2js' ]
+        tasks: [  ]
       },
 
       /**
@@ -601,7 +583,7 @@ module.exports = function ( grunt ) {
    * The `build` task gets your app ready to run for development and testing.
    */
   grunt.registerTask( 'build', [
-    'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
+    'clean', 'jshint', 'coffeelint', 'coffee', 'less:build',
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
     'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_apptpl' , 'index:build',
   ]);
