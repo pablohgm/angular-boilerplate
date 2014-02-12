@@ -334,7 +334,10 @@ module.exports = function ( grunt ) {
           baseUrl: '<%= build_dir %>/src/app',
           mainConfigFile: '<%= build_dir %>/src/app/requirejs_config.js',
           name: 'requirejs_config',
-          out: '<%= compile_dir %>/assets/rjs-<%= pkg.name %>-<%= pkg.version %>.js'
+          out: '<%= compile_dir %>/assets/rjs-<%= pkg.name %>-<%= pkg.version %>.js',
+          wrap: {
+              start: '<%= meta.banner %>'
+          }
         }
       }
     },
