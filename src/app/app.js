@@ -11,7 +11,7 @@ define([
 
     var module = ng.module('app', [
         'app.home',
-        'app.about',
+        'app.about'
     ]);
 
     module.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {

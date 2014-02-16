@@ -10,7 +10,7 @@ define(['angular', './module', './controllers', './partials'], function (ng, mod
             views: {
                 "main": {
                     controller: 'HomeCtrl',
-                    templateUrl: 'src/app/home/home.tpl.html'
+                    templateUrl: './src/app/home/home.tpl.html'
                 }
             },
             data:{ pageTitle: 'Home' }

@@ -26,7 +26,8 @@ require.config({
         lodash: '../../vendor/lodash/dist/lodash.min',
         moment: '../../vendor/moment/min/moment.min',
         placeholders: '../../vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min',
-        plusOne: '../common/plusOne/plusOne'
+        plusOne: '../common/plusOne/plusOne',
+        angularTemplateCache: '../common/angular-templatecache/angular-templatecache'
 
     },
     shim: {
@@ -46,14 +47,17 @@ require.config({
             deps: ["angular"]
         },
         "restangular": {
-            'deps': ['angular', 'lodash']
+            'deps': ["angular", "lodash"]
         },
         "placeholders": {
+            deps: ["angular"]
+        },
+        "plusOne": {
             deps: ["angular"]
         }
     },
 
     // kick start application
-    deps: ['./bootstrap']
+    deps: ["./bootstrap"]
 
 });

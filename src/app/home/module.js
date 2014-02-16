@@ -1,7 +1,9 @@
 define(['angular'], function (ng) {
     'use strict';
     return ng.module('app.home',
-        ['ui.router',
+        [
+         'app.home.partials',
+         'ui.router',
          'plusOne'
         ]);
 });

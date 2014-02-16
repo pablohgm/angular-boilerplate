@@ -1,5 +1,5 @@
 define([
-    './controllers',
     './partials',
+    './controllers',
     './routes'
 ], function () {});
