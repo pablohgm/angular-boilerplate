@@ -9,18 +9,20 @@ module.exports = function(config) {
      * This is the list of file patterns to load into the browser during testing.
      */
     files: [
-      <% scripts.forEach( function ( file ) { %>'<%= file %>',
+      'test/test_requirejs_config.js',
+      <% scripts.forEach( function ( file ) { %>{pattern: '<%= file %>', included: false},
       <% }); %>
-      'src/**/*.js',
-      'src/**/*.coffee',
-      'test/unit/**/*.js',
-      'test/unit/**/*.coffee',
+      {pattern: 'src/**/*.js', included: false},
+      {pattern: 'src/**/*.coffee', included: false},
+      {pattern: 'src/**/*.html', included: false},
+      {pattern: 'test/unit/**/*.js', included: false},
+      {pattern: 'test/unit/**/*.coffee', included: false}
     ],
     exclude: [
       'src/assets/**/*.js'
     ],
-    frameworks: [ 'jasmine' ],
-    plugins: [ 'karma-jasmine', 'karma-firefox-launcher', 'karma-chrome-launcher', 'karma-phantomjs-launcher', 'karma-coffee-preprocessor' ],
+    frameworks: [ 'jasmine', 'requirejs'],
+    plugins: [ 'karma-jasmine', 'karma-requirejs', 'karma-firefox-launcher', 'karma-chrome-launcher', 'karma-phantomjs-launcher', 'karma-coffee-preprocessor' ],
     preprocessors: {
       '**/*.coffee': 'coffee',
     },

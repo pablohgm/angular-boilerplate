@@ -429,6 +429,8 @@ module.exports = function ( grunt ) {
         dest: 'karma-unit.conf.js',
         src: [ 
           '<%= vendor_files.js %>',
+          '<%= vendor_files.test_js %>',
+          '<%= vendor_files.require_js %>',
           '<%= test_files.js %>'
         ]
       },
@@ -589,10 +591,8 @@ module.exports = function ( grunt ) {
     'clean', 'jshint', 'coffeelint', 'coffee', 'less:build',
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
     'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_apptpl' , 'index:build',
+    'karmaconfig:unit', 'karma:continuous'
   ]);
-  // Temporarely disable unit testing
-  //'karmaconfig:unit', 'karma:continuous'
-
 
   /**
    * The `compile` task gets your app ready for deployment by concatenating and
