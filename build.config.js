@@ -77,7 +77,11 @@ module.exports = {
     require_js: [
       'vendor/requirejs/require.js',
       'vendor/requirejs-domready/domReady.js',
-      'vendor/requirejs-text/text.js',
+      'vendor/requirejs-text/text.js'
+    ],
+    test_js: [
+      'vendor/angular-mocks/angular-mocks.js',
+      'vendor/angular-scenario/angular-scenario.js'
     ],
     css: [
     ],
