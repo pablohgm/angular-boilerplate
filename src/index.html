@@ -103,7 +103,8 @@
       </div>
     </footer>
 
-    <script src="vendor/requirejs/require.js" data-main="src/app/requirejs_config.js"></script>
+    <% scripts.forEach( function ( file ) { %>
+    <script src="vendor/requirejs/require.js" data-main="<%= file %>"></script><% }); %>
 
   </body>
 </html>

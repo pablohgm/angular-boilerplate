@@ -366,8 +366,7 @@ module.exports = function ( grunt ) {
       build: {
         dir: '<%= build_dir %>',
         src: [
-          '<%= vendor_files.js %>',
-          '<%= build_dir %>/src/**/*.js',
+          '<%= build_dir %>/src/**/*requirejs_config.js',
           '<%= vendor_files.css %>',
           '<%= less.build.dest %>'
         ]
