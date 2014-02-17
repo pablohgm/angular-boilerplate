@@ -17,6 +17,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-coffeelint');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-ng-annotate');
 
   /**
    * Load in our build configuration file.
@@ -283,6 +284,14 @@ module.exports = function ( grunt ) {
           src: [ '<%= app_files.coffeeunit %>' ]
         }
       }
+    },
+
+    ngAnnotate: {
+        options: {
+        },
+        build: {
+            src: [ '<%= build_dir %>/**/*.js' ]
+        }
     },
 
     /**
@@ -566,7 +575,7 @@ module.exports = function ( grunt ) {
    * minifying your code.
    */
   grunt.registerTask( 'compile', [
-    'less:compile', 'copy:compile_assets', 'copy:compile_vendorjs', 'requirejs:compile', 'index:compile'
+    'ngAnnotate', 'less:compile', 'copy:compile_assets', 'copy:compile_vendorjs', 'requirejs:compile', 'index:compile'
   ]);
 
   grunt.registerTask( 'test:unit', [
