@@ -57,7 +57,12 @@ require.config({
         }
     },
 
+    priority: [
+		"angular"
+	],
+
     // kick start application
     deps: ["./bootstrap"]
 
 });
+

@@ -1,11 +1,15 @@
+(function() {
 'use strict';
+
 
 /* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
 
 describe('my app', function() {
 
     beforeEach(function() {
-        browser().navigateTo('index.html');
+        browser().navigateTo('/index.html');
+        console.log("e2e test my app");
+        sleep(1);
     });
 
 
@@ -18,6 +22,7 @@ describe('my app', function() {
 
         beforeEach(function() {
             browser().navigateTo('#/home');
+            sleep(1);
         });
 
 
@@ -29,3 +34,5 @@ describe('my app', function() {
     });
 
 });
+
+})();

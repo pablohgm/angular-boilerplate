@@ -19,13 +19,14 @@ module.exports = function ( config ) {
     ],
 
     proxies : {
-      '/': 'http://localhost:8000/'
+      '/': 'http://localhost:8100/'
     },
 
     frameworks: [ 'ng-scenario' ],
 
     plugins: [
         'karma-ng-scenario',
+        'karma-requirejs',
         'karma-jasmine',
         'karma-firefox-launcher',
         'karma-chrome-launcher',
@@ -48,7 +49,7 @@ module.exports = function ( config ) {
      */
     port: 9018,
     runnerPort: 9100,
-    urlRoot: '/',
+    urlRoot: "__karma__",
 
     /** 
      * Disable file watching by default.

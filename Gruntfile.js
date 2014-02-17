@@ -358,7 +358,10 @@ module.exports = function ( grunt ) {
         }
       },
       testserver: {
-
+        options: {
+          port: 8100,
+          keepalive: false
+        }
       }
     },
 
@@ -370,6 +373,11 @@ module.exports = function ( grunt ) {
         configFile: '<%= build_dir %>/karma-e2e.conf.js',
         port: 9101,
         singleRun: true
+      },
+      e2edebug: {
+        configFile: '<%= build_dir %>/karma-e2e.conf.js',
+        port: 9101,
+        singleRun: false
       },
       unit: {
         configFile: '<%= build_dir %>/karma-unit.conf.js',
@@ -438,7 +446,6 @@ module.exports = function ( grunt ) {
         tpl: 'karma/karma-e2e.tpl.js',
         dest: 'karma-e2e.conf.js',
         src: [
-          '<%= vendor_files.js %>'
         ]
       }
 

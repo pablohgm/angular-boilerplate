@@ -80,8 +80,7 @@ module.exports = {
       'vendor/requirejs-text/text.js'
     ],
     test_js: [
-      'vendor/angular-mocks/angular-mocks.js',
-      'vendor/angular-scenario/angular-scenario.js'
+      'vendor/angular-mocks/angular-mocks.js'
     ],
     css: [
     ],
