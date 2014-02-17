@@ -9,7 +9,6 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
@@ -18,7 +17,6 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-coffeelint');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-karma');
-  grunt.loadNpmTasks('grunt-ngmin');
 
   /**
    * Load in our build configuration file.
@@ -150,6 +148,16 @@ module.exports = function ( grunt ) {
           }
         ]
       },
+      compile_vendorjs: {
+          files: [
+              {
+                src: [ '<%= vendor_files.require_js_compile %>'],
+                dest: '<%= compile_dir %>/',
+                cwd: '.',
+                expand: true
+              }
+          ]
+      },
       compile_assets: {
         files: [
           {
@@ -176,22 +184,6 @@ module.exports = function ( grunt ) {
           '<%= less.build.dest %>'
         ],
         dest: '<%= less.build.dest %>'
-      },
-      /**
-       * The `compile_js` target is the concatenation of our application source
-       * code and all specified vendor source code into a single file.
-       */
-      compile_js: {
-        options: {
-          banner: '<%= meta.banner %>'
-        },
-        src: [ 
-          '<%= vendor_files.js %>', 
-          'module.prefix', 
-          '<%= build_dir %>/src/**/*.js', 
-          'module.suffix'
-        ],
-        dest: '<%= compile_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.js'
       }
     },
 
@@ -212,37 +204,6 @@ module.exports = function ( grunt ) {
         src: [ '<%= app_files.coffee %>' ],
         dest: '<%= build_dir %>',
         ext: '.js'
-      }
-    },
-
-    /**
-     * `ng-min` annotates the sources before minifying. That is, it allows us
-     * to code without the array syntax.
-     */
-    ngmin: {
-      compile: {
-        files: [
-          {
-            src: [ '<%= app_files.js %>' ],
-            cwd: '<%= build_dir %>',
-            dest: '<%= build_dir %>',
-            expand: true
-          }
-        ]
-      }
-    },
-
-    /**
-     * Minify the sources!
-     */
-    uglify: {
-      compile: {
-        options: {
-          banner: '<%= meta.banner %>'
-        },
-        files: {
-          '<%= concat.compile_js.dest %>': '<%= concat.compile_js.dest %>'
-        }
       }
     },
 
@@ -330,11 +291,11 @@ module.exports = function ( grunt ) {
     requirejs: {
       compile: {
         options: {
-          optimize: "none",
+          optimize: "uglify2",
           baseUrl: '<%= build_dir %>/src/app',
           mainConfigFile: '<%= build_dir %>/src/app/requirejs_config.js',
           name: 'requirejs_config',
-          out: '<%= compile_dir %>/assets/rjs-<%= pkg.name %>-<%= pkg.version %>.js',
+          out: '<%= compile_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.js',
           wrap: {
               start: '<%= meta.banner %>'
           }
@@ -420,7 +381,7 @@ module.exports = function ( grunt ) {
       compile: {
         dir: '<%= compile_dir %>',
         src: [
-          '<%= concat.compile_js.dest %>',
+          '<%= requirejs.compile.options.out %>',
           '<%= vendor_files.css %>',
           '<%= less.compile.dest %>'
         ]
@@ -606,7 +567,7 @@ module.exports = function ( grunt ) {
    * minifying your code.
    */
   grunt.registerTask( 'compile', [
-    'less:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
+    'less:compile', 'copy:compile_assets', 'copy:compile_vendorjs', 'requirejs:compile', 'index:compile'
   ]);
 
   grunt.registerTask( 'test:unit', [

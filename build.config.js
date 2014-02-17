@@ -74,6 +74,9 @@ module.exports = {
       'vendor/moment/min/moment.min.js',
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
     ],
+    require_js_compile: [
+      'vendor/requirejs/require.js'
+    ],
     require_js: [
       'vendor/requirejs/require.js',
       'vendor/requirejs-domready/domReady.js',

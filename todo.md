@@ -7,5 +7,7 @@ Reintegrate e2e testing with requirejs. -- PENDING
     - Working on debug mode only
     - Migrate to protractor
 Ensure compile/final version works. -- PENDING
-    - Integrate ngmin with RJSOptimizer.
+    - Integrate ngmin with RJSOptimizer. - DONE
+        - ngmin wont work with rj-optimizer - DONE
+
     - Remove uglify as separate process.
