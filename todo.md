@@ -11,3 +11,4 @@ Reintegrate e2e testing with requirejs. -- PENDING
     - Working on debug mode only - DONE
     - Migrate to protractor -- PENDING
 Review and fix the delta process - DONE
+Migrate templates from Bootstrap2.3 to Bootstrap3
