@@ -493,7 +493,7 @@ module.exports = function ( grunt ) {
           '<%= app_files.atpl %>', 
           '<%= app_files.ctpl %>'
         ],
-        tasks: [  ]
+        tasks: [ 'copy:build_apptpl' ]
       },
 
       /**
