@@ -1,4 +1,4 @@
-# [ab-angular-boilerplate](https://github.com/kvindasAB/ab-angular-boilerplate) [![Build Status](https://travis-ci.org/joshdmiller/ng-boilerplate.png?branch=master)](https://travis-ci.org/joshdmiller/ng-boilerplate)
+# [angular-enterprise-kickstar](https://github.com/kvindasAB/angular-enterprise-kickstart.git)
 
 An enterprise kickstarter for [AngularJS](http://angularjs.org) projects.
 
