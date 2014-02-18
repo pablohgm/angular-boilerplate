@@ -7,10 +7,10 @@
     "type": "MIT",
     "url": "https://github.com/kvindasAB/angular-enterprise-kickstart/blob/master/LICENSE"
   },
-  "bugs": "https://github.com/joshdmiller/ng-boilerplate/issues",
+  "bugs": "https://github.com/kvindasAB/angular-enterprise-kickstart/issues",
   "repository": {
     "type": "git",
-    "url": "git@github.com:joshdmiller/ng-boilerplate.git"
+    "url": "git@github.com:kvindasAB/angular-enterprise-kickstart.git"
   },
   "dependencies": {},
   "devDependencies": {

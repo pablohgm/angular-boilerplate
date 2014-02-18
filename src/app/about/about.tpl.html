@@ -1,36 +1,36 @@
 <div class="row-fluid">
   <h1 class="page-header">
-    The Elevator Pitch
-    <small>For the lazy and impatient.</small>
+    Project Summary
   </h1>
   <p>
-    <code>ng-boilerplate</code> is an opinionated kickstarter for web
-    development projects. It's an attempt to create a simple starter for new
-    web sites and apps: just download it and start coding. The goal is to
-    have everything you need to get started out of the box; of course it has
-    slick styles and icons, but it also has a best practice directory structure
-    to ensure maximum code reuse. And it's all tied together with a robust
-    build system chock-full of some time-saving goodness.
+    With <code>angular-enterprise-kickstart</code> we wanted to create a base
+      in which to develop enterprise AngularJS projects.
+      When analyzing how to define this base/kickstart we analyze several options and
+      ng-boilerplate was an excellent alternative, but it did not completely fit our needs
+      one of them was the usage of RequireJS as a main component of the framework
+      to ensure scalability as the project grow.
+  </p>
+  <p>
+    Our scope probably is narrower than ngBoilerplate.
+    We do not look out to be every AngularJS project kickstart, rather we look forward
+    to be a base for those projects planning to use AngularJS+RequireJS.
+    We have found RequireJS being beneficial on medium size projects where modularization
+    and code scalability is a must.
   </p>
 
-  <h2>Why?</h2>
+  <h2>Main differences with NG-Boilerplate</h2>
 
   <p>
-    Because my team and I make web apps, and 
-    last year AngularJS became our client-side framework of choice. We start
-    websites the same way every time: create a directory structure, copy and
-    ever-so-slightly tweak some config files from an older project, and yada
-    yada, etc., and so on and so forth. Why are we repeating ourselves? We wanted a starting point; a set of
-    best practices that we could identify our projects as embodying and a set of
-    time-saving wonderfulness, because time is money.
-  </p>
-
-  <p>
-    There are other similar projects out there, but none of them suited our
-    needs. Some are awesome but were just too much, existing more as reference
-    implementations, when we really just wanted a kickstarter. Others were just
-    too little, with puny build systems and unscalable architectures.  So we
-    designed <code>ng-boilerplate</code> to be just right.
+      <ul>
+        <li>Require JS integration, optimization and minification.</li>
+        <li>Modularization proposal based on AngularJS+RequireJS.</li>
+        <li>Integration of E2E tests.</li>
+        <li>Separation of tests from application sources.</li>
+        <li>Separation of styles from application sources.</li>
+        <li>Updated to use the latest versions of both grunt plugins and bower libs.</li>
+        <li>Added some core libs regularly used on enterprise development. Example: restangular, ng-table, momentjs, etc.</li>
+        <li>WebServer functionality with rules.</li>
+      </ul>
   </p>
 
   <h2>What ng-boilerplate Is Not</h2>
@@ -46,13 +46,12 @@
 
   <h1 class="page-header">
     So What's Included?
-    <small>I'll try to be more specific than "awesomeness".</small>
   </h1>
   <p>
     This section is just a quick introduction to all the junk that comes
-    pre-packaged with <code>ng-boilerplate</code>. For information on how to
+    pre-packaged with <code>angular-enterprise-kickstart</code>. For information on how to
     use it, see the <a
-      href="https://github.com/joshdmiller/ng-boilerplate#readme">project page</a> at
+      href="https://github.com/kvindasAB/angular-enterprise-kickstart#readme">project page</a> at
     GitHub.
   </p>
 
@@ -194,49 +193,32 @@
 
   <h1 class="page-header">
     The Roadmap
-    <small>Really? What more could you want?</small>
   </h1>
 
   <p>
-    This is a project that is <i>not</i> broad in scope, so there's not really
-    much of a wish list here. But I would like to see a couple of things:
+    We are still validating if continuing to use Grunt as our build system.
+      Although Grunt has become a semi-standard building tool among javascript projects there are new alternatives
+      such as <a href="http://gulpjs.com">Gulp</a>, <a href="http://brunch.io">Brunch</a>
+      and recently <a href="https://github.com/joliss/broccoli">Brocolli</a>.
+      We are also aware that the build system can be simpler than it is right now, both for this project and ngBoilerplate.
+  </p>
+  <p>
+    We plan to migrate e2e tests from angular-scenario to <a href="https://github.com/angular/protractor">Protractor</a>
+      which is the new recommended tool by the angular team.
+      <a href="http://docs.angularjs.org/guide/dev_guide.e2e-testing">See more</a>
+  </p>
+  <p>
+    We will also plan to build a small application example with this project to depict how to use the different
+      technologies together.
   </p>
 
-  <p>
-    I'd like it to be a little simpler. I want this to be a universal starting
-    point. If someone is starting a new AngularJS project, she should be able to
-    clone, merge, or download its source and immediately start doing what she
-    needs without renaming a bunch of files and methods or deleting spare parts
-    ... like this page. This works for a first release, but I just think there
-    is a little too much here right now.
-  </p>
 
   <p>
-    I'd also like to see a simple generator. Nothing like <a href="yeoman.io">
-    Yeoman</a>, as there already is one of those, but just something that
-    says "I want Bootstrap but not Font Awesome and my app is called 'coolApp'.
-    Gimme." Perhaps a custom download builder like UI Bootstrap
-    has. Like that. Then again, perhaps some Yeoman generators wouldn't be out
-    of line. I don't know. What do you think?
-  </p>
-
-  <p>
-    Naturally, I am open to all manner of ideas and suggestions. See the "Can I
+    We are open to all manner of ideas and suggestions. See the "Can I
     Help?" section below.
   </p>
 
   <h2>The Tactical To Do List</h2>
-
-  <p>
-    There isn't much of a demonstration of UI Bootstrap. I don't want to pollute
-    the code with a demo for demo's sake, but I feel we should showcase it in
-    <i>some</i> way.
-  </p>
-
-  <p>
-    <code>ng-boilerplate</code> should include end-to-end tests. This should
-    happen soon. I just haven't had the time.
-  </p>
 
   <p>
     Lastly, this site should be prettier, but I'm no web designer. Throw me a
@@ -250,8 +232,7 @@
   </p>
 
   <p>
-    This is an opinionated kickstarter, but the opinions are fluid and
-    evidence-based. Don't like the way I did something? Think you know of a
+    Don't like the way we did something? Think you know of a
     better way? Have an idea to make this more useful? Let me know! You can
     contact me through all the usual channels or you can open an issue on the
     GitHub page. If you're feeling ambitious, you can even submit a pull
