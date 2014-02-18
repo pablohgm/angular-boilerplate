@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app ng-controller="AppCtrl" >
-  <head>
+<head>
     <title ng-bind="pageTitle"></title>
 
     <!-- social media tags -->
@@ -15,96 +15,100 @@
     <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
 
     <!-- font awesome from BootstrapCDN -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
 
     <!-- it's stupid to have to load it here, but this is for the +1 button -->
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-      { "parsetags": "explicit" }
+        { "parsetags": "explicit" }
     </script>
 
-  </head>
-  <body>
+</head>
+<body>
 
+<!-- Header - START -->
 
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">aeks</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active">
+                    <a ui-sref="home"><i class="fa fa-home"></i> Home</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="about"><i class="fa fa-info"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-book"></i> Docs</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-github"></i> GitHub</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-comments"></i> Support</a>
+                </li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="page-header">
     <div class="container">
-      <div class="masthead">
-        <h3 class="muted">angular-enterprise-kickstart <small><a
-              href="http://github.com/joshdmiller/ng-boilerplate/blob/master/CHANGELOG.md">v<%= version %></a></small></h3>
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <ul class="nav">
-                <li ui-route="/home" ng-class="{active:$uiRoute}">
-                  <a href="#/home">
-                    <i class="icon-home"></i>
-                    Home
-                  </a>
-                </li>
-                <li ui-route="/about" ng-class="{active:$uiRoute}">
-                  <a href="#/about">
-                    <i class="icon-info-sign"></i>
-                    What is it?
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/joshdmiller/ng-boilerplate#readme">
-                    <i class="icon-book"></i>
-                    Read the Docs
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/joshdmiller/ng-boilerplate">
-                    <i class="icon-github-alt"></i>
-                    Github
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/joshdmiller/ng-boilerplate/issues">
-                    <i class="icon-comments"></i>
-                    Support
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h1>angular-enterprise-kickstart
+                    <small><a
+                    href="http://github.com/joshdmiller/ng-boilerplate/blob/master/CHANGELOG.md">v<%= version %></a></small></h1>
     </div>
+</div>
 
-    <div class="container" ui-view="main"></div>
+<!-- Header - END -->
 
-    <footer class="footer">
-      <div class="container">
+
+
+
+<!-- Main Content - START -->
+<div class="container" ui-view="main">
+</div>
+<!-- Main Content - END   -->
+
+
+<!-- Footer - START -->
+<footer class="footer">
+    <div class="container">
         <div class="footer-inner">
-          <ul class="social">
-            <li><a target="_blank" href="http://gplus.to/joshdmiller"><i class="icon-google-plus-sign"></i></a></li>
-            <li><a target="_blank" href="http://twitter.com/joshdmiller"><i class="icon-twitter-sign"></i></a></li>
-            <li><a target="_blank" href="http://linkedin.com/in/joshdmiller"><i class="icon-linkedin-sign"></i></a></li>
-            <li><a target="_blank" href="http://github.com/joshdmiller/ng-boilerplate"><i class="icon-github-sign"></i></a></li>
-          </ul>
-          
+            <ul class="social">
+                <li><a target="_blank" href="http://twitter.com/alivebox"><i class="fa fa-twitter-square"></i></a></li>
+                <li><a target="_blank" href="http://linkedin.com/in/alivebox"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a target="_blank" href="http://github.com/joshdmiller/ng-boilerplate"><i class="fa fa-github-square"></i></a></li>
+            </ul>
 
-          <p>
-            (c) 2013 Josh David Miller. 
-            <a href="http://github.com/joshdmiller/ng-boilerplate/fork_select">Fork this</a>
-            to kickstart your next project.
-            <br />
-            ng-boilerplate is based on
-            <a href="http://www.angularjs.org">AngularJS</a>,
-            <a href="http://getbootstrap.com">Bootstrap</a>, 
-            <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
-            and 
-            <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.        
-          </p>
+
+            <p>
+                (c) 2014 Powered by Alivebox.
+                <a href="http://github.com/joshdmiller/ng-boilerplate/fork_select">Fork this</a>
+                to kickstart your next project.
+                <br />
+                angular-enterprise-kickstart is based on
+                <a href="http://www.angularjs.org">ng-boilerplate</a>,
+                <a href="http://www.angularjs.org">AngularJS</a>,
+                <a href="http://getbootstrap.com">Bootstrap</a>,
+                <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
+                <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.
+            </p>
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>
+<!-- Footer - END -->
 
-    <% scripts.forEach( function ( file ) { %>
-    <script src="vendor/requirejs/require.js" data-main="<%= file %>"></script><% }); %>
+<% scripts.forEach( function ( file ) { %>
+<script src="vendor/requirejs/require.js" data-main="<%= file %>"></script><% }); %>
 
-  </body>
+</body>
 </html>
