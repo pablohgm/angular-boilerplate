@@ -92,22 +92,27 @@ ng-boilerplate/
   |- src/
   |  |- app/
   |  |  |- <app logic>
+  |  |  |- requirejs main config
   |  |- assets/
   |  |  |- <static files>
   |  |- common/
   |  |  |- <reusable code>
   |  |- less/
   |  |  |- main.less
+  |- test/
+  |  |- unit/
+  |  |  |- <unit test files>
+  |  |- e2e/
+  |  |  |- <e2e test files>
+  |  |- requirejs test config
   |- vendor/
   |  |- angular-bootstrap/
   |  |- bootstrap/
-  |  |- placeholders/
+  |  |- vendor files
   |- .bowerrc
   |- bower.json
   |- build.config.js
   |- Gruntfile.js
-  |- module.prefix
-  |- module.suffix
   |- package.json
 ```
 
@@ -128,16 +133,13 @@ learn more.
 - `build.config.js` - our customizable build settings; see "The Build System"
   below.
 - `Gruntfile.js` - our build script; see "The Build System" below.
-- `module.prefix` and `module.suffix` - our compiled application script is
-  wrapped in these, which by default are used to place the application inside a
-  self-executing anonymous function to ensure no clashes with other libraries.
 - `package.json` - metadata about the app, used by NPM and our build script. Our
   NPM dependencies are listed here.
 
 ### Detailed Installation
 
 This section provides a little more detailed understanding of what goes into
-getting `ngBoilerplate` up and running. Though `ngBoilerplate` is really simple
+getting `angular-enterprise-kickstart` up and running. Though the installation is really simple
 to use, it might help to have an understanding of the tools involved here, like
 Node.js and Grunt and Bower. If you're completely new to highly organized,
 modern JavaScript development, take a few short minutes to read [this overview

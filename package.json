@@ -1,11 +1,11 @@
 {
-  "author": "Alivebox - Kibsaim Vindas",
-  "name": "ab-angular-boilerplate",
+  "author": "Alivebox - Kib Vindas",
+  "name": "angular-enterprise-kickstart",
   "version": "0.1.0",
-  "homepage": "http://bit.ly/ng-boilerplate",
+  "homepage": "http://www.alivebox.com",
   "licenses": {
     "type": "MIT",
-    "url": "https://raw.github.com/joshdmiller/ng-boilerplate/master/LICENSE"
+    "url": "https://github.com/kvindasAB/angular-enterprise-kickstart/blob/master/LICENSE"
   },
   "bugs": "https://github.com/joshdmiller/ng-boilerplate/issues",
   "repository": {
