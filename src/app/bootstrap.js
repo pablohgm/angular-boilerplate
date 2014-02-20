@@ -9,7 +9,6 @@ define([
     'use strict';
 
     require(['domReady!'], function (document) {
-        //ng.bootstrap(document, ['app']);
-        ng.resumeBootstrap([app.name]);
+        ng.bootstrap(document, ['app']);
     });
 });

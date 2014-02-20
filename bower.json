@@ -1,8 +1,8 @@
 {
-  "name": "ab-angular-boilerplate",
-  "version": "0.3.1",
+  "name": "angular-enterprise-kickstart",
+  "version": "0.1.0",
   "devDependencies": {
-    "angular": ">= 1.2.10",
+    "angular": ">= 1.2.11",
     "bootstrap": "~3.1.0",
 
     "angular-bootstrap": "~0.10.0",

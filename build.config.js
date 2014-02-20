@@ -75,7 +75,8 @@ module.exports = {
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
     ],
     require_js_compile: [
-      'vendor/requirejs/require.js'
+      'vendor/requirejs/require.js',
+      'vendor/requirejs-domready/domReady.js'
     ],
     require_js: [
       'vendor/requirejs/require.js',

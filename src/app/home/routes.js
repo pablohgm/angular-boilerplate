@@ -9,7 +9,7 @@ define(['angular', './module', './controllers/index'], function (ng, module, con
             url: '/home',
             views: {
                 "main": {
-                    controller: 'HomeCtrl',
+                    controller: 'HomeCtrl1',
                     templateUrl: './src/app/home/partials/home.tpl.html'
                 }
             },

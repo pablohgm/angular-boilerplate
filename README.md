@@ -16,12 +16,10 @@ $ cd angular-enterprise-kickstart
 $ sudo npm -g install grunt-cli karma bower
 $ npm install
 $ bower install
-$ grunt connect:server watch
+$ grunt watch
 ```
 
 Finally, open `http://localhost:8000` in your browser.
-
-Happy hacking!
 
 ## Purpose
 

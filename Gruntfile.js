@@ -11,6 +11,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-connect-rewrite');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-conventional-changelog');
   grunt.loadNpmTasks('grunt-bump');
@@ -18,6 +19,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-ng-annotate');
+
 
   /**
    * Load in our build configuration file.
@@ -315,7 +317,9 @@ module.exports = function ( grunt ) {
 
     /**
      * Connect is a http server provided by grunt.
-     *
+     * server - http server started on watch
+     * serversa - http server standlone
+     * testserver - http server used for e2e testing
      */
     connect: {
       options: {
@@ -324,6 +328,17 @@ module.exports = function ( grunt ) {
       },
       server: {
         options: {
+          keepalive: false
+        }
+      },
+      serversa: {
+        options: {
+          keepalive: true
+        }
+      },
+      servercompilesa: {
+        options: {
+          base: '<%= compile_dir %>/',
           keepalive: true
         }
       },
@@ -553,7 +568,7 @@ module.exports = function ( grunt ) {
    * before watching for changes.
    */
   grunt.renameTask( 'watch', 'delta' );
-  grunt.registerTask( 'watch', [ 'build', 'karma:unit:start', 'delta' ] );
+  grunt.registerTask( 'watch', [ 'build', 'connect:server', 'karma:unit:start', 'delta' ] );
 
   /**
    * The default task is to build and compile.
