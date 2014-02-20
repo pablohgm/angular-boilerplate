@@ -7,7 +7,7 @@ define([
   'use strict';
   var templates = {
       'home': {
-        url: './src/app/home/home.tpl.html',
+        url: './src/app/home/partials/home.tpl.html',
         template: homeTpl
       }
     };

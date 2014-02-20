@@ -40,7 +40,7 @@ The RequireJS configuration file is structure the following way
         which bootstraps the application.
 
 As a side comment, the paths declared at the paths section does not mean that those libraries will strictly be loaded in the app.
-There can be libraries declared in the config files, that if none of the application source folder requires them,
+There can be libraries declared in the config files, that if none of the application source files requires them,
 they won't be loaded at runtime.
 
 At the end fo the file, can also be found a defer_bootstrap mechanism.

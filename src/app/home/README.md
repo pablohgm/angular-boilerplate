@@ -6,68 +6,66 @@
 src/
   |- app/
   |  |- home/
-  |  |  |- home.js
-  |  |  |- home.less
-  |  |  |- home.spec.js
-  |  |  |- home.tpl.html
+  |  |  |- index.js
+  |  |  |- module.js
+  |  |  |- routes.js
+  |  |  |- controllers/
+  |  |  |- services/
+  |  |  |- routes/
 ```
 
-- `home.js` - defines the module.
-- `home.less` - module-specific styles; this file is imported into
-  `src/less/main.less` manually by the developer.
-- `home.spec.js` - module unit tests.
-- `home.tpl.html` - the route template.
+- `index.js` - defines the module loader. Is basically an empty script indicating the loading of all other module pieces.
+- `module.js` - Main module (app.home) declaration.
+- `routes.js` - Define module routes.
+- `controllers/` - Controllers sub module folder
+- `services/` - Services sub module folder
+- `partials/` - Partials sub module folder
 
-## `home.js`
+Home Module depicts a complex module for the application where each of the different
+pieces of the app are contained within a sub-module, for example controllers or services.
 
-This boilerplate is too simple to demonstrate it, but `src/app/home` could have
-several sub-folders representing additional modules that would then be listed
-as dependencies of this one.  For example, a `note` section could have the
-submodules `note.create`, `note.delete`, `note.search`, etc.
+This module follows the recommended AngularJS code structure where each different section is controlled by a different sub module
+so for example, one sub module for controllers and another one for services.
+There are other alternatives like structuring the code per functionality, for example, having a products module, or clients module,
+and integrating all controllers, services and others inside of those.
 
-Regardless, so long as dependencies are managed correctly, the build process
-will automatically take take of the rest.
+## `index.js`
 
-The dependencies block is also where component dependencies should be
-specified, as shown below.
+Defines the module loader. Is basically an empty script indicating the loading of all other module pieces.
 
-```js
-angular.module( 'ngBoilerplate.home', [
-  'ui.state',
-  'titleService',
-  'plusOne'
-])
-```
+## `module.js`
 
-Each section or module of the site can also have its own routes. AngularJS will
-handle ensuring they are all available at run-time, but splitting it this way
-makes each module more self-contained. We use [ui-router](https://github.com/angular-ui/ui-router) to create
-a state for our 'home' page. We set the url we'd like to see in the address bar
-as well as the controller and template file to load. Specifying "main" as our view
-means the controller and template will be loaded into the <div ui-view="main"/> element
-of the root template (aka index.html). Read more over at the [ui-router wiki](https://github.com/angular-ui/ui-router/wiki).
-Finally we add a custom data property, pageTitle, which will be used to set the page's
-title (see the app.js controller).
+Main module (app.home) declaration.
+Defined in its own file to be able to import/require it on other files.
 
-```js
-.config(function config( $stateProvider ) {
-  $stateProvider.state( 'home', {
-    url: '/home',
-    views: {
-      "main": {
-        controller: 'HomeCtrl',
-        templateUrl: 'home/home.tpl.html'
-      }
-    },
-    data:{ pageTitle: 'Home' }
-  });
-})
-```
+## `routes.js`
 
-And of course we define a controller for our route, though in this case it does
-nothing.
+Define the module routes.
 
-```js
-.controller( 'HomeCtrl', function HomeController( $scope ) {
-})
-```
+## `controllers/`
+
+Contains the controllers sub module.
+Each sub module is composed by an index (loader), module definition, and N files for each of the module entities,
+in this specific case, controllers.
+This arrangements allows to have each of the entities in one file, that when you have mid-size controllers is highly valuable.
+
+## `services/`
+
+Contains the services sub module.
+Same as controllers sub-module but with services.
+
+## `partials/`
+
+Contains the partials that should be loaded and cached.
+
+## `partials/partial.js`
+
+Loads the partial via RequireJS text plugin, and should be declared
+as part of the module dependencies. Example:
+
+`'text!./partials/home.tpl.html'`
+
+All partials should be listed as module dependencies, and assigned as arguments, as seen with argument `homeTpl`.
+RequireJS will ensure that when the module executes all the templates have been already loaded.
+Later an object relating the template url, and template text should be created.
+This object is the one used by the utility AngularTemplateCache to register the templates to the proper urls.
