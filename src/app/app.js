@@ -5,13 +5,15 @@ define([
     'angularUIUtils',
     'plusOne',
     './home/index',
-    './about/index'
+    './about/index',
+    './list/index'
 ], function (ng) {
     'use strict';
 
     var module = ng.module('app', [
         'app.home',
-        'app.about'
+        'app.about',
+        'app.list'
     ]);
 
     module.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
