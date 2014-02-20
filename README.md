@@ -51,33 +51,12 @@ Additional the project is inheriting all the benefits from ng-boilerplate as:
 
 ## Philosophy
 
-The principal goal of `ngBoilerplate` is to set projects up for long-term
-success.  So `ngBoilerplate` tries to follow best practices everywhere it can.
-These are:
-
-- Properly orchestrated modules to encourage drag-and-drop component re-use.
-- Tests exist alongside the component they are testing with no separate `test`
-  directory required; the build process should be sophisticated enough to handle
-  this.
-- Speaking of which, the build system should work automagically, without
-  involvement from the developer. It should do what needs to be done, while
-  staying out of the way. Components should end up tested, linted, compiled,
-  and minified, ready for use in a production environment.
+- RequireJS integration and modular app.
+- Complete build system that does much of the usual required development tasks.
 - Integration with popular tools like Bower, Karma, and LESS.
 - *Encourages* test-driven development. It's the only way to code.
-- A directory structure that is cogent, meaningful to new team members, and
-  supporting of the above points.
 - Well-documented, to show new developers *why* things are set up the way they
   are.
-- It should be responsive to evidence. Community feedback is therefore crucial
-  to the success of `ngBoilerplate`.
-
-But `ngBoilerplate` is not an example of an AngularJS app: this is a
-kickstarter. If you're looking for an example of what a complete, non-trivial
-AngularJS app that does something real looks like, complete with a REST backend
-and authentication and authorization, then take a look at
-[`angular-app`](http://github.com/angular-app/angular-app), which does just
-that - and does it well.
 
 ## Learn
 
@@ -86,7 +65,7 @@ that - and does it well.
 At a high level, the structure looks roughly like this:
 
 ```
-ng-boilerplate/
+angular-enterprise-kickstart/
   |- grunt-tasks/
   |- karma/
   |- src/
@@ -147,7 +126,7 @@ of the tools](tools.md) before continuing with this section.
 
 Okay, ready to go? Here it is:
 
-`ngBoilerplate` uses [Grunt](http://gruntjs.org) as its build system, so
+`angular-enterprise-kickstart` uses [Grunt](http://gruntjs.org) as its build system, so
 [Node.js](http://nodejs.org) is required. Also, Grunt by default no longer comes
 with a command-line utility and Karma and Bower must end up in your global path
 for the build system to find it, so they must be installed independently. Once
@@ -165,7 +144,7 @@ from GitHub, or merge the branch into your existing repository. Assuming you're
 starting from scratch, simply clone this repository using git:
 
 ```sh
-$ git clone git://github.com/joshdmiller/ng-boilerplate my-project-name
+$ git clone git://github.com/kvindasAB/angular-enterprise-kickstart.git my-project-name
 $ cd my-project-name
 ```
 
@@ -179,7 +158,7 @@ This will read the `dependencies` (empty by default) and the `devDependencies`
 (which contains our build requirements) from `package.json` and install
 everything needed into a folder called `node_modules/`.
 
-There are many Bower packages used by `ngBoilerplate`, like Twitter Bootstrap
+There are many Bower packages used by `angular-enterprise-kickstart`, like Twitter Bootstrap
 and Angular UI, which are listed in `bower.js`. To install them into the
 `vendor/` directory, simply run:
 
@@ -200,7 +179,7 @@ application (or we download it from a different computer), we can simply run the
 `bower install` command as above and all our dependencies will be installed for
 us. Neat!
 
-Technically, `ngBoilerplate` is now ready to go.
+Technically, your project is now ready to go.
 
 However, prior to hacking on your application, you will want to modify the
 `package.json` file to contain your project's information. Do not remove any
@@ -255,8 +234,7 @@ $ grunt
 
 The best way to learn about the build system is by familiarizing yourself with
 Grunt and then reading through the heavily documented build script,
-`Gruntfile.js`. But you don't need to do that to be very productive with
-`ngBoilerplate`. What follows in this section is a quick introduction to the
+`Gruntfile.js`. But you don't need to do that to be very productive. What follows in this section is a quick introduction to the
 tasks provided and should be plenty to get you started.
 
 The driver of the process is the `delta` multi-task, which watches for file
@@ -272,7 +250,7 @@ changes:
   values configured dynamically by Grunt.
 * `delta:less` - When any `*.less` file within `src/` changes, the
   `src/less/main.less` file is linted and copied into
-  `build/assets/ng-boilerplate.css`.
+  `build/assets/angular-enterprise-boilerplate.css`.
 * `delta:jssrc` - When any JavaScript file within `src/` that does not end in
   `.spec.js` changes, all JavaScript sources are linted, all unit tests are run,
   and the all source files are re-copied to `build/src`.
@@ -330,7 +308,7 @@ expected, open the `bin/index.html` file in your browser. Voila!
 
 ### Live Reload!
 
-`ngBoilerplate` also includes [Live Reload](http://livereload.com/), so you no
+`angular-enterprise-kickstart` also includes [Live Reload](http://livereload.com/), so you no
 longer have to refresh your page after making changes! You need a Live Reload
 browser plugin for this:
 
@@ -339,13 +317,12 @@ browser plugin for this:
 - Safari - [Download from Live Reload](http://download.livereload.com/2.0.9/LiveReload-2.0.9.safariextz)
 - Internet Explorer - Surely you jest.
 
-Note that if you're using the Chrome version with `file://` URLs (as is the
-default with `ngBoilerplate`) you need to tell Live Reload to allow it. Go to
+Note that if you're using the Chrome version with `file://` URLs you need to tell Live Reload to allow it. Go to
 `Menu -> Tools -> Extensions` and check the "Allow access to file URLs" box next
 to the Live Reload plugin.
 
 When you load your page, click the Live Reload icon in your toolbar and
-everything should work magically. w00t!
+everything should work magically.
 
 If you'd prefer to not install a browser extension, then you must add the
 following to the end of the `body` tag in `index.html`:
@@ -354,32 +331,21 @@ following to the end of the `body` tag in `index.html`:
 <script src="http://localhost:35729/livereload.js"></script>
 ```
 
-Boom!
-
 ## Roadmap
 
-This is a project that is not broad in scope, so there's not really much of a
-wish list here. But I would like to see a couple of things:
-
-I'd like it to be a little simpler. I want this to be a universal starting
-point. If someone is starting a new AngularJS project, she should be able to
-clone, merge, or download its source and immediately start doing what she needs
-without renaming a bunch of files and methods or deleting spare parts. What I
-have works for a first release, but I just think there is a little too much here
-right now.
-
-I'd also like to see a simple generator. Nothing like Yeoman, as there already
-is one of those, but just something that allows the user to say "I want
-Bootstrap but not Font Awesome and my app is called 'coolApp'. Gimme." Perhaps a
-custom download builder like UI Bootstrap has. Like that. Then again, perhaps
-some Yeoman generators wouldn't be out of line. I don't know. What do you think?
-
-Naturally, I am open to all manner of ideas and suggestions. See the
-"Contributing" section below.
+- We are still validating if continuing to use Grunt as our build system.
+    Although Grunt has become a semi-standard building tool among javascript projects there are new alternatives
+    such as <a href="http://gulpjs.com">Gulp</a>, <a href="http://brunch.io">Brunch</a>
+    and recently <a href="https://github.com/joliss/broccoli">Brocolli</a>.
+    We are also aware that the build system can be simpler than it is right now, both for this project and ngBoilerplate.
+- We plan to migrate e2e tests from angular-scenario to <a href="https://github.com/angular/protractor">Protractor</a>
+    which is the new recommended tool by the angular team.
+    <a href="http://docs.angularjs.org/guide/dev_guide.e2e-testing">See more</a>
+- We will also plan to build a small application example with this project to depict how to use the different technologies together.
 
 ### To Do
 
-See the [issues list](http://github.com/joshdmiller/ng-boilerplate/issues). And
+See the [issues list](https://github.com/kvindasAB/angular-enterprise-kickstart/issues). And
 feel free to submit your own!
 
 ### Contributing
