@@ -11,7 +11,8 @@ define([
 
     var module = ng.module('app', [
         'app.home',
-        'app.about'
+        'app.about',
+        'ui.router'
     ]);
 
     module.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
@@ -20,9 +21,8 @@ define([
 
     module.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
         $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-            console.log("state changed....");
             if ( angular.isDefined( toState.data.pageTitle ) ) {
-                $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
+                $scope.pageTitle = toState.data.pageTitle + ' | Angular-Enterprise-Kickstart' ;
             }
         });
     });

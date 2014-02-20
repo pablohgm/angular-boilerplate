@@ -41,9 +41,6 @@ deferred bootstrap that occurs at app/bootstrap.js,
 also specifies the main `AppCtrl` controller, and contains the `ngView` directive
 into which route templates are placed.
 
-Being a RequireJS application, it is expected that the application only contains one script definition,
-pointing to RequireJS library, and indicating to RequireJS where does the RequireJS config resides.
-
 Unlike any other HTML document (e.g. the templates), `index.html` is compiled as
 a Grunt template, so variables from `Gruntfile.js` and `package.json` can be
 referenced from within it. Changing `name` in `package.json` from
