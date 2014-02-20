@@ -3,11 +3,7 @@ require.config({
     // optimizer configuration
     'generateSourceMaps': true,
     'preserveLicenseComments': false,
-    'optimize': 'uglify2',
     'useSourceUrl': true,
-
-    // potential pending libs
-    // angular-resource, angular-sanitize, angular-route,
 
     // runtime paths and shims
     paths: {
