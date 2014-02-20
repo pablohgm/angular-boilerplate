@@ -5,8 +5,17 @@ define(['angular', './module'], function (ng, module) {
     /**
      * And of course we define a controller for our route.
      */
-    module.controller( 'UserEditCtrl', function ListController( $scope, $http ) {
-        console.log("UserEditCtrl init....");
+    module.controller( 'UserCtrl', function UserController( $scope, $http ) {
+        console.log("UserCtrl init....");
+
+        if($scope.id !== undefined){
+            this.loadUser();
+        }
+
+        $scope.loadUser = function(){
+            console.log("loading user ....");
+
+        };
 
         $scope.saveUser = function(argUser){
             console.log("Saving ....");
@@ -23,9 +32,6 @@ define(['angular', './module'], function (ng, module) {
                     console.log("Success save ....");
             });
         };
-
-
-
     });
 
 });

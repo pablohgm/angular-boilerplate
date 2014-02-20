@@ -6,16 +6,16 @@ define([
     'plusOne',
     './home/index',
     './about/index',
-    './list/index',
-    './list/editUser/index'
+    './user/listUsers/index',
+    './user/editUser/index'
 ], function (ng) {
     'use strict';
 
     var module = ng.module('app', [
         'app.home',
         'app.about',
-        'app.list',
-        'app.user.editUser'
+        'app.user.listUsers',
+        'app.user.user'
     ]);
 
     module.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {

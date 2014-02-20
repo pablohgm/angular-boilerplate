@@ -12,15 +12,15 @@ define(['angular', './module', './controllers', './partials'], function (ng, mod
      * And of course we define a controller for our route.
      */
     module.config(function config( $stateProvider ) {
-        $stateProvider.state( 'list', {
-            url: '/list',
+        $stateProvider.state( 'listUsers', {
+            url: '/listUsers',
             views: {
                 "main": {
-                    controller: 'ListCtrl',
-                    templateUrl: './src/app/list/list.tpl.html'
+                    controller: 'ListUsersCtrl',
+                    templateUrl: './src/app/user/listUsers.tpl.html'
                 }
             },
-            data:{ pageTitle: 'List' }
+            data:{ pageTitle: 'List Users' }
         });
     });
 

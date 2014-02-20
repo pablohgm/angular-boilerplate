@@ -11,9 +11,8 @@ define(['angular', './module'], function (ng, module) {
     /**
      * And of course we define a controller for our route.
      */
-    module.controller( 'ListCtrl', function ListController( $scope, $http ) {
+    module.controller( 'ListUsersCtrl', function ListUsersController( $scope, $http ) {
         console.log("ListCtrl init....");
-        $scope.name="List name from controller";
         $http({
             url: 'http://jsonstub.com/users',
             method: 'GET',

@@ -7,9 +7,9 @@
  */
 define(['angular', 'placeholders'], function (ng) {
     'use strict';
-    return ng.module('app.user.editUser',
+    return ng.module('app.user.listUsers',
         [
-            'app.user.editUser.partials',
+            'app.user.listUsers.partials',
             'ui.router',
             'plusOne',
             'placeholders'
