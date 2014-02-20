@@ -1,0 +1,12 @@
+<div class="row-fluid" xmlns="http://www.w3.org/1999/html">
+<h1 class="page-header">
+    Edit User
+</h1>
+<div novalidate  ng-controller="UserEditCtrl">
+    <div class="form-group">
+        <label for="inputName">User Name</label>
+        <input class="form-control" id="inputName" placeholder="Enter Name" ng-model="user.name">
+    </div>
+    <button type="button" class="btn btn-primary" ng-click="saveUser(user)">Save</button>
+</div>
+</div>

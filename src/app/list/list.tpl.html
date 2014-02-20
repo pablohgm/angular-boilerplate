@@ -1,8 +1,12 @@
-<div class="row-fluid">
+<div class="row-fluid" xmlns="http://www.w3.org/1999/html">
 <h1 class="page-header">
     List
 </h1>
-<p>
-    List grid
-</p>
+<a href="#/editUser">Add User</a>
+<div ng-controller="ListCtrl">
+    <p>Controller binding: {{name}}</p>
+    <ul ng-repeat="tmpUser in users">
+        <li>{{tmpUser.name}} {{tmpUser.id}}</li>
+    </ul>
+</div>
 </div>
