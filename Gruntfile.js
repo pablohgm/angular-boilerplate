@@ -318,7 +318,8 @@ module.exports = function ( grunt ) {
     /**
      * Connect is a http server provided by grunt.
      * server - http server started on watch
-     * serversa - http server standlone
+     * serversa - http server stand-alone
+     * servercompilesa - http server stand-alone pointing to compile_dir
      * testserver - http server used for e2e testing
      */
     connect: {

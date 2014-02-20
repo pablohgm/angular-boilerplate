@@ -26,12 +26,13 @@ Finally, open `http://localhost:8000` in your browser.
 `angular-enterprise-kickstart` main differences with ng-boilerplate.
 
 - Require JS integration, optimization and minification.
-- Modularization proposal based on AngularJS+RequireJS
+- Modularization proposal based on AngularJS+RequireJS.
 - Separation of tests from application sources.
 - Separation of styles from application sources.
 - Updated to use the latest versions of both grunt plugins and bower libs.
 - Added some core libs regularly used on enterprise development. Example: restangular, ng-table, momentjs, etc.
 - WebServer functionality with rules.
+- Soon: Integration of E2E tests - Work in Progress / Migrating to Protractor as angular-scenario is presenting incompatibilities
 
 Our scope probably is narrower than ngBoilerplate.
 We do not look out to be every AngularJS project kickstart, rather we look forward
