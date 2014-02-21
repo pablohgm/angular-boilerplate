@@ -4,11 +4,13 @@
 define([
     'require',
     'angular',
-    'app'
-], function (require, ng, app) {
+    'app',
+    'domReady'
+], function (require, ng, app, domReady) {
     'use strict';
 
-    require(['domReady!'], function (document) {
-        ng.bootstrap(document, ['app']);
+    domReady(function() {
+        ng.bootstrap(document, [app.name]);
     });
+
 });
