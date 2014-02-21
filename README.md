@@ -1,8 +1,8 @@
 # [angular-enterprise-kickstar](https://github.com/kvindasAB/angular-enterprise-kickstart.git)
 
-An enterprise kickstarter for [AngularJS](http://angularjs.org) projects.
+An enterprise kickstarter for [AngularJS](http://angularjs.org)+[RequireJS](http://requirejs.org) projects.
 
-Based on [ngBoilerplate](http://joshdmiller.github.com/ng-boilerplate).
+Based on [ngBoilerplate](http://joshdmiller.github.com/ng-boilerplate), RequireJS as one of key components, intelligent build system and best recommended web and angular libraries.
 
 ***
 
