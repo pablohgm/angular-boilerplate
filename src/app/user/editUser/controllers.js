@@ -8,7 +8,7 @@ define(['angular', './module'], function (ng, module) {
     module.controller( 'UserCtrl', function UserController( $scope, $http, $location, $stateParams ) {
         console.log("UserCtrl init....");
 
-        $scope.user = {name: "", id:0};
+        $scope.user = {name: "", id:0, birthDate: null};
         $scope.alerts = [];
 
         $scope.init = function(){
@@ -46,6 +46,7 @@ define(['angular', './module'], function (ng, module) {
         };
 
         $scope.saveUser = function(argUser){
+            debugger;
             console.log("Saving ....");
             $http({
                 url: 'http://jsonstub.com/user',
@@ -76,7 +77,7 @@ define(['angular', './module'], function (ng, module) {
          * */
 
         $scope.today = function() {
-            $scope.dt = new Date();
+            $scope.user.birthDate = new Date();
         };
 
         $scope.showWeeks = true;
@@ -85,7 +86,7 @@ define(['angular', './module'], function (ng, module) {
         };
 
         $scope.clear = function () {
-            $scope.dt = null;
+            $scope.user.birthDate = null;
         };
 
         // Disable weekend selection
