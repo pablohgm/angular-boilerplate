@@ -18,7 +18,6 @@ define([
         'app.user.listUsers',
         'app.user.user',
         'ui.bootstrap',
-        'app.about',
         'ui.router'
     ]);
 
