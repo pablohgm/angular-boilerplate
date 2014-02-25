@@ -5,16 +5,19 @@ define(['angular', './module'], function (ng, module) {
     /**
      * And of course we define a controller for our route.
      */
-    module.controller( 'UserCtrl', function UserController( $scope, $http, $location ) {
+    module.controller( 'UserCtrl', function UserController( $scope, $http, $location, $stateParams ) {
         console.log("UserCtrl init....");
 
         $scope.user = {name: "", id:0};
+        $scope.alerts = [];
 
         $scope.init = function(){
             console.log("init function .....");
-            if(this.$id){
+            if(!_.isUndefined($stateParams.userId) ){
                 this.loadEditMode();
                 return;
+
+
             }
             this.loadCreateMode();
         };
@@ -53,10 +56,18 @@ define(['angular', './module'], function (ng, module) {
                     'JsonStub-Project-Key': 'd71daa77-1ca3-411a-8d60-a5f5201f932b'
                 }
             }).success(function (data, status, headers, config) {
-                    //do something with data
-                    console.log("Success save ....");
-                    $location.path("/listUsers");
+                    $scope.showSuccessAlert();
             });
+        };
+
+        $scope.showSuccessAlert = function(){
+            console.log("showSuccessAlert ...");
+            $scope.alerts.push({ type: 'success', msg: 'Well done! The user has been saved' });
+        };
+
+        $scope.acceptSuccessNotification = function(){
+            console.log("acceptSuccessNotification ...");
+            $location.path("/listUsers");
         };
     });
 

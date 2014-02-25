@@ -4,6 +4,7 @@ define([
     'angularUIRouter',
     'angularUIUtils',
     'plusOne',
+    'lodash',
     './home/index',
     './about/index',
     './user/listUsers/index',
@@ -15,7 +16,8 @@ define([
         'app.home',
         'app.about',
         'app.user.listUsers',
-        'app.user.user'
+        'app.user.user',
+        'ui.bootstrap'
     ]);
 
     module.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {

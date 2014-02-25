@@ -24,7 +24,7 @@ define(['angular', './module', './controllers', './partials'], function (ng, mod
         });
 
         $stateProvider.state( 'editUser', {
-            url: '/editUser/:id',
+            url: '/editUser/:userId',
             views: {
                 "main": {
                     controller: 'UserCtrl',

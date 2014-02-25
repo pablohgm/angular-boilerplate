@@ -34,6 +34,10 @@ define(['angular', './module'], function (ng, module) {
                     console.log("Error GET ListCtrl");
                 });
         };
+
+        $scope.showSaveUserSuccessAlert= function(){
+            console.log("SAVE USER SUCCESS ...");
+        };
     });
 
 });

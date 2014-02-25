@@ -46,8 +46,11 @@
                 <li ui-sref-active="active">
                     <a ui-sref="about"><i class="fa fa-info"></i> About</a>
                 </li>
-                <li ui-sref-active="active">
-                    <a ui-sref="listUsers"><i class="fa"></i> List</a>
+                <li class="dropdown" ng-controller="AppCtrl">
+                    <a  class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="listUsers"><i class="fa fa-book"></i>User</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-book"></i> Docs</a>

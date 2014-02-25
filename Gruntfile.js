@@ -263,7 +263,9 @@ module.exports = function ( grunt ) {
         noarg: true,
         sub: true,
         boss: true,
-        eqnull: true
+        eqnull: true,
+        //debuggers warnings
+        '-W087': true
       },
       globals: {}
     },
