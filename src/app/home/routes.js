@@ -1,4 +1,4 @@
-define(['angular', './module', './controllers', './partials'], function (ng, module, controllers, partials) {
+define(['angular', './module', './controllers/index'], function (ng, module, controllers) {
     'use strict';
 
     /**
@@ -9,8 +9,8 @@ define(['angular', './module', './controllers', './partials'], function (ng, mod
             url: '/home',
             views: {
                 "main": {
-                    controller: 'HomeCtrl',
-                    templateUrl: './src/app/home/home.tpl.html'
+                    controller: 'HomeCtrl1',
+                    templateUrl: './src/app/home/partials/home.tpl.html'
                 }
             },
             data:{ pageTitle: 'Home' }

@@ -14,9 +14,8 @@ require.config({
    baseUrl: '/base/src/app',
 
   'generateSourceMaps': true,
-  'preserveLicenseComments': false,
-  'optimize': 'uglify2',
   'useSourceUrl': true,
+
   paths: {
     angular: '../../vendor/angular/angular',
     angularResource: '../../vendor/angular-resource/angular-resource',
