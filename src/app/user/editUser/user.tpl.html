@@ -10,6 +10,19 @@
         <div class="form-group">
             <label for="inputName">User Name</label>
             <input class="form-control" id="inputName" placeholder="Enter Name" ng-model="user.name">
+
+            <div class="row">
+                <div class="col-md-3">
+                <p class="input-group">
+                    <label for="inputBirthDate">Birth Date</label>
+                    <input id="inputBirthDate" type="text" class="form-control" datepicker-popup="{{format}}" ng-model="user.birthDate" is-open="opened" min="minDate" max="'2015-06-22'"
+                           datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                </div>
+            </div>
         </div>
         <button type="button" class="btn btn-primary" ng-click="saveUser(user)">Save</button>
     </div>

@@ -9,12 +9,16 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Birth Date</th>
+                <th>Children</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="tmpUser in users">
                 <td>{{tmpUser.id}}</td>
                 <td>{{tmpUser.name}}</td>
+                <td>{{tmpUser.birthDate}}</td>
+                <td>{{tmpUser.children}}</td>
                 <td >
                     <a href="#/editUser/{{tmpUser.id}}" class="btn btn-info btn-sm">Edit</a>
                 </td>
