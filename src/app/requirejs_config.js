@@ -15,6 +15,8 @@ require.config({
         angularUIUtils:  '../../vendor/angular-ui-utils/ui-utils.min',
         angularMoment:  '../../vendor/angular-moment/angular-moment.min',
         restangular: '../../vendor/restangular/dist/restangular',
+        angularCookies: '../../vendor/angular-cookies/angular-cookies.min',
+        angularLocalStorage: '../../vendor/angularLocalStorage/src/angularLocalStorage',
 
         domReady: '../../vendor/requirejs-domready/domReady',
         text: '../../vendor/requirejs-text/text',
@@ -50,6 +52,9 @@ require.config({
         },
         "plusOne": {
             deps: ["angular"]
+        },
+        "angularLocalStorage": {
+            deps: ["angular", "angularCookies"]
         }
     },
 

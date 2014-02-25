@@ -374,7 +374,7 @@ module.exports = function ( grunt ) {
       },
       continuous: {
         configFile: '<%= build_dir %>/karma-unit.conf.js',
-        singleRun: true
+        singleRun: false
       }
     },
 

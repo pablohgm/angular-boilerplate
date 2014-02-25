@@ -12,6 +12,7 @@ define(['angular', 'placeholders'], function (ng) {
             'app.user.user.partials',
             'ui.router',
             'plusOne',
-            'placeholders'
+            'placeholders',
+            'angularLocalStorage'
         ]);
 });

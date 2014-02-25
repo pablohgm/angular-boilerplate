@@ -5,6 +5,7 @@ define([
     'angularUIUtils',
     'plusOne',
     'lodash',
+    'angularLocalStorage',
     './home/index',
     './about/index',
     './user/listUsers/index',

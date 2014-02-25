@@ -69,6 +69,8 @@ module.exports = {
       'vendor/angular-moment/angular-moment.min.js',
       'vendor/restangular/dist/restangular.min.js',
       'vendor/ng-table/ng-table.js',
+      'vendor/angular-cookies/angular-cookies.min.js',
+      'vendor/angularLocalStorage/src/angularLocalStorage.js',
 
       'vendor/lodash/dist/lodash.min.js',
       'vendor/moment/min/moment.min.js',

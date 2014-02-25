@@ -25,6 +25,8 @@ require.config({
     angularMoment: '../../vendor/angular-moment/angular-moment.min',
     angularMocks: '../../vendor/angular-mocks/angular-mocks',
     restangular: '../../vendor/restangular/dist/restangular',
+    angularCookies: '../../vendor/angular-cookies/angular-cookies.min',
+    angularLocalStorage: '../../vendor/angularLocalStorage/src/angularLocalStorage',
     domReady: '../../vendor/requirejs-domready/domReady',
     text: '../../vendor/requirejs-text/text',
     lodash: '../../vendor/lodash/dist/lodash.min',
@@ -40,6 +42,7 @@ require.config({
     'angularUIUtils': { deps: ['angular'] },
     'angularMoment': { deps: ['angular'] },
     'angularMocks': { deps: ['angular'] },
+     'angularLocalStorage': { deps: ["angular", "angularCookies"]},
     'restangular': {
       'deps': [
         'angular',
