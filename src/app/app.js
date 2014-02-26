@@ -8,16 +8,14 @@ define([
     'angularLocalStorage',
     './home/index',
     './about/index',
-    './user/listUsers/index',
-    './user/editUser/index'
+    './user/index'
 ], function (ng) {
     'use strict';
 
     var module = ng.module('app', [
         'app.home',
         'app.about',
-        'app.user.listUsers',
-        'app.user.user',
+        'app.user',
         'ui.bootstrap',
         'ui.router'
     ]);

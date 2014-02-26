@@ -5,8 +5,8 @@ define(['angular', './module'], function (ng, module) {
     /**
      * And of course we define a controller for our route.
      */
-    module.controller( 'UserCtrl', function UserController( $scope, $http, $location, $stateParams, storage ) {
-        console.log("UserCtrl init....");
+    module.controller( 'UserEditCtrl', function UserEditController( $scope, $http, $location, $stateParams, storage ) {
+        console.log("UserEditCtrl init....");
 
         $scope.user = {name: "", id:0, birthDate: null};
         $scope.alerts = [];

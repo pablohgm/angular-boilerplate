@@ -1,17 +1,10 @@
-/**
- * Created with JetBrains PhpStorm.
- * User: Karenina
- * Date: 19/02/14
- * Time: 03:10 PM
- * To change this template use File | Settings | File Templates.
- */
 define(['angular', './module'], function (ng, module) {
     'use strict';
 
     /**
      * And of course we define a controller for our route.
      */
-    module.controller( 'ListUsersCtrl', function ListUsersController( $scope, $http, storage ) {
+    module.controller( 'UserListCtrl', function UserListController( $scope, $http, storage ) {
         console.log("ListCtrl init....");
 
         $scope.init = function(){

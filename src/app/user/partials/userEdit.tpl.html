@@ -2,7 +2,7 @@
     <h1 class="page-header">
         Edit User
     </h1>
-    <div novalidate  ng-controller="UserCtrl" ng-init="init()">
+    <div novalidate  ng-controller="UserEditCtrl" ng-init="init()">
         <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">
             {{alert.msg}}
             <button ng-click="acceptSuccessNotification()" >Ok!</button>

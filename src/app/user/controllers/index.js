@@ -1,0 +1,4 @@
+define([
+    './userListCtrl',
+    './userEditCtrl'
+], function () {});
