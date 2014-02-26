@@ -53,6 +53,9 @@ require.config({
         "plusOne": {
             deps: ["angular"]
         },
+        "angularCookies": {
+            deps: ["angular"]
+        },
         "angularLocalStorage": {
             deps: ["angular", "angularCookies"]
         }

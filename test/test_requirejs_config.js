@@ -42,7 +42,8 @@ require.config({
     'angularUIUtils': { deps: ['angular'] },
     'angularMoment': { deps: ['angular'] },
     'angularMocks': { deps: ['angular'] },
-     'angularLocalStorage': { deps: ["angular", "angularCookies"]},
+    'angularCookies': { deps: ["angular"] },
+    'angularLocalStorage': { deps: ["angular", "angularCookies"]},
     'restangular': {
       'deps': [
         'angular',

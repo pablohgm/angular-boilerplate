@@ -16,8 +16,6 @@ define(['angular', './module'], function (ng, module) {
             if(!_.isUndefined($stateParams.userId) ){
                 this.loadEditMode();
                 return;
-
-
             }
             this.loadCreateMode();
         };
