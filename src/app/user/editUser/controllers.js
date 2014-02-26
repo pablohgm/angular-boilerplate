@@ -10,6 +10,7 @@ define(['angular', './module'], function (ng, module) {
 
         $scope.user = {name: "", id:0, birthDate: null};
         $scope.alerts = [];
+        $scope.userList = [];
 
         $scope.init = function(){
             console.log("init function .....");
@@ -18,6 +19,14 @@ define(['angular', './module'], function (ng, module) {
                 return;
             }
             this.loadCreateMode();
+            this.loadUserList();
+        };
+
+        $scope.loadUserList = function(){
+            var tmpUserList = storage.get("userList");
+            if(!_.isUndefined(tmpUserList)){
+                $scope.userList = tmpUserList;
+            }
         };
 
         $scope.loadCreateMode= function(){
@@ -44,8 +53,9 @@ define(['angular', './module'], function (ng, module) {
         };
 
         $scope.saveUser = function(argUser){
-            debugger;
             console.log("Saving ....");
+            $scope.userList.push(argUser);
+            storage.set("userList", this.userList);
 //            $http({
 //                url: 'http://jsonstub.com/user',
 //                method: 'POST',
