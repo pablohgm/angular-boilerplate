@@ -6,6 +6,7 @@ define([
     'plusOne',
     'lodash',
     'angularLocalStorage',
+    './notifications/index',
     './home/index',
     './about/index',
     './user/index'
@@ -13,6 +14,7 @@ define([
     'use strict';
 
     var module = ng.module('app', [
+        'app.notifications',
         'app.home',
         'app.about',
         'app.user',
