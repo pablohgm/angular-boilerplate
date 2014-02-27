@@ -46,7 +46,7 @@
                 <li ui-sref-active="active">
                     <a ui-sref="about"><i class="fa fa-info"></i> About</a>
                 </li>
-                <li class="dropdown" ng-controller="AppCtrl">
+                <li class="dropdown">
                     <a  class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a ui-sref="userList"><i class="fa fa-book"></i>User</a></li>
@@ -71,6 +71,11 @@
       <h1>angular - boilerplate
                     <small><a
                     href="https://github.com/kvindasAB/angular-enterprise-kickstart/blob/master/CHANGELOG.md">v<%= version %></a></small></h1>
+    </div>
+    <div class="container" ng-controller="NotificationCtrl">
+        <alert ng-repeat="notification in notifications" type="notification.type" close="closeAlert($index)">
+            {{notification.msg}}
+        </alert>
     </div>
 </div>
 
